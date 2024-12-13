@@ -12,32 +12,18 @@ public class AgentTest {
         Agent agent2 = new Agent("IMANE");
         Agent agent3 = new Agent("IMANE1");
 
-        // Agent2 et Agent3 s'abonnent à Agent1
         agent1.souscrire(agent2);
         agent1.souscrire(agent3);
 
-        // Création de transactions
-        Transaction transaction1 = new Transaction.Builder()
-                .setId("12345FFF")
-                .setDate(new Date())
-                .setMontant(10500.50)
-                .setType("Vente")
+        Transaction transaction1 = new Transaction.Builder().setId("12345FFF").setDate(new Date()).setMontant(10500.50).setType("Vente")
                 .build();
 
-        Transaction transaction2 = new Transaction.Builder()
-                .setId("12345DDRE")
-                .setDate(new Date())
-                .setMontant(20000.75)
-                .setType("Achat")
+        Transaction transaction2 = new Transaction.Builder().setId("12345DDRE").setDate(new Date()).setMontant(20000.75).setType("Achat")
                 .build();
         agent1.ajouterTransaction(transaction1);
         agent1.ajouterTransaction(transaction2);
         agent2.souscrire(agent3);
-        Transaction transaction3 = new Transaction.Builder()
-                .setId("345902JJJ")
-                .setDate(new Date())
-                .setMontant(250.00)
-                .setType("Vente")
+        Transaction transaction3 = new Transaction.Builder().setId("345902JJJ").setDate(new Date()).setMontant(250.00).setType("Vente")
                 .build();
 
         agent2.ajouterTransaction(transaction3);

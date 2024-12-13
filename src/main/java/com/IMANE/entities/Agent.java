@@ -17,7 +17,6 @@ public class Agent implements Sujet, Observateur {
         this.transactions = new ArrayList<>();
     }
 
-    // Implémentation de Sujet
     @Override
     public void souscrire(Observateur observateur) {
         observateurs.add(observateur);
@@ -45,18 +44,15 @@ public class Agent implements Sujet, Observateur {
         }
     }
 
-    // Implémentation de Observateur
     @Override
     public void notifier(String message) {
         System.out.println("Agent " + nom + " a reçu une notification : " + message);
     }
 
-    // Ajout d'une transaction et notification
     public void ajouterTransaction(Transaction transaction) {
         transactions.add(transaction); // Ajouter la transaction
         System.out.println(nom + " a ajouté une transaction : " + transaction);
 
-        // Créer un événement et notifier les observateurs
         EvenementNotification evenement = new EvenementNotification(nom, transaction);
         notifierObservateurs(evenement);
     }

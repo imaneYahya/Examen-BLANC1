@@ -8,7 +8,7 @@ public class Transaction {
     private final double montant;
     private final Type type;
 
-    // Constructeur privé pour forcer l'utilisation du Builder
+
     private Transaction(Builder builder) {
         this.id = builder.id;
         this.date = builder.date;
@@ -16,19 +16,15 @@ public class Transaction {
         this.type = Type.valueOf(builder.type);
     }
 
-    // Getters pour accéder aux propriétés
     public String getId() {
         return id;
     }
-
     public Date getDate() {
         return date;
     }
-
     public double getMontant() {
         return montant;
     }
-
     public Type getType() {
         return type;
     }
@@ -43,7 +39,6 @@ public class Transaction {
                 '}';
     }
 
-    // Classe interne Builder
     public static class Builder {
         private String id;
         private Date date;
